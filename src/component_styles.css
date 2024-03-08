@@ -34,25 +34,6 @@
   align-self: center;
 }
 
-.ComputerPart{
-    color:rgb(139, 198, 236);
-    font-size: 20px;
-    font-size: 1.25vmax;
-    font-family:'Franklin Gothic Medium';
-    letter-spacing: 1px;
-    padding: 1.5%;
-
-    border: 2px;
-    border-right: 10px;
-    border-left: 10px;
-    border-top: 5px;
-    border-color: rgb(43, 65, 78);
-    border-style: solid;
-
-    display: flex;
-    justify-content: space-between;
-  }
-
 .PartLabel{
   width:20%;
   align-self: center;

@@ -1,0 +1,64 @@
+
+.EditButton{
+    height:100%;
+    width:75px;
+    width:4em;
+    height:2em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+
+    color:aliceblue;
+    font-family: consolas;
+    
+    font-size: 1vmax;
+    min-width: fit-content;
+    min-height: fit-content;
+
+    background-color: rgb(124, 177, 212);
+    border-color: rgb(115, 176, 216);
+    box-shadow: rgb(102,102,102);
+    border-radius: 8px;
+  }
+
+  .EditButton:hover{
+      background: rgb(139, 198, 236);
+      background-image: -webkit-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: -moz-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: -ms-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: -o-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: linear-gradient(to bottom, rgb(124, 177, 212), rgb(139, 198, 236));
+      text-decoration: none;
+  }
+
+  .DeleteButton{
+    height:100%;
+    width:75px;
+    width:4.2em;
+    height:2em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+
+    width:4.2vmax;
+    height:2vmax;
+
+    color:aliceblue;
+    font-family: consolas;
+    font-size: 1vmax;
+    min-width: fit-content;
+    min-height: fit-content;
+    
+    background-color: rgb(194, 75, 75);
+    border-color: rgb(224, 88, 88);
+    box-shadow: rgb(102,102,102);
+    border-radius: 8px;
+  }
+
+  .DeleteButton:hover{
+    background: rgb(241, 97, 97);
+    background-image: -webkit-linear-gradient(top, rgb(216, 127, 127), rgb(224, 88, 88));
+    background-image: -moz-linear-gradient(top, rgb(241, 97, 97), rgb(224, 88, 88));
+    background-image: -ms-linear-gradient(top, rgb(241, 97, 97), rgb(224, 88, 88));
+    background-image: -o-linear-gradient(top, rgb(241, 97, 97), rgb(224, 88, 88));
+    background-image: linear-gradient(to bottom, rgb(241, 97, 97), rgb(224, 88, 88));
+    text-decoration: none;
+}
