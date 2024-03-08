@@ -1,0 +1,107 @@
+
+.InputBoxPanel{
+    background-color: rgb(85, 118, 139);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    row-gap: 5%;
+    border: 10px;
+    border-color: rgb(43, 65, 78);
+    border-style: solid;
+    
+  }
+  
+  .InputEntryBox{
+    background-color: rgb(85, 118, 139);
+    color:rgb(139, 198, 236);
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium';
+    text-align: center;
+    align-items: center;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  
+  .InputBox{
+    background-color: rgb(104, 124, 146);
+    border-color:rgb(83, 93, 104);
+    color:aliceblue;
+  
+    font-size: 26px;
+    width: 50%;
+    font-family:'Franklin Gothic Medium';
+    letter-spacing: 1px;
+    text-align: center;
+    
+    min-width: 100px;
+  }
+  
+  @font-face {
+    font-family: consolas;
+    src: "public/CONSOLA.TTF";
+  }
+
+  .InsertButton{
+    width: 25%;
+    align-self: center;
+    height:15%;
+  
+    color:aliceblue;
+    font-size: 26px;
+    font-size: 1.5vmax;
+    font-family: consolas;
+  
+    background-color: rgb(138, 139, 139);
+    border-color: rgb(95, 97, 99);
+    border-radius: 15px;
+  }
+
+  .EditButton{
+    height:100%;
+    width:75px;
+    width:4em;
+    height:2.75em;
+
+    color:aliceblue;
+    letter-spacing: 1px;
+    font-family: consolas;
+    font-size:20px;
+    
+    background-color: rgb(124, 177, 212);
+    border-color: rgb(115, 176, 216);
+    box-shadow: rgb(102,102,102);
+    border-radius: 8px;
+  }
+
+  .EditButton:hover{
+      background: rgb(139, 198, 236);
+      background-image: -webkit-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: -moz-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: -ms-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: -o-linear-gradient(top, rgb(124, 177, 212), rgb(139, 198, 236));
+      background-image: linear-gradient(to bottom, rgb(124, 177, 212), rgb(139, 198, 236));
+      text-decoration: none;
+  }
+
+  .DeleteButton{
+    height:100%;
+    width:75px;
+    width:4.2em;
+    height:2.75em;
+
+    color:aliceblue;
+    letter-spacing: 1px;
+    font-family: consolas;
+    font-size:20px;
+    
+    background-color: rgb(224, 88, 88);
+    border-color: rgb(224, 88, 88);
+    box-shadow: rgb(102,102,102);
+    border-radius: 8px;
+  }

@@ -1,0 +1,59 @@
+.ComponentList{
+    background-color: rgb(85, 118, 139);
+    max-height: 60vh;
+    height: 50%;
+    word-wrap: break-word;
+    display:flexbox;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    overflow: auto;
+  }
+  
+.PagePanel{
+  display:flex;
+}
+
+.ProductDetails{
+  align-self: center;
+  position:relative;
+  overflow-x: hidden;
+  max-width: 50%;
+  height: 1em;
+  border: 1px;
+  border-right: 10px;
+  border-color: rgb(43, 65, 78);
+  border-style: solid;
+}
+
+.ButtonLayout{
+  display: flex;
+  width:25%;
+  column-gap: 20%;
+  overflow-x: hidden;
+  align-self: center;
+}
+
+.ComputerPart{
+    color:rgb(139, 198, 236);
+    font-size: 20px;
+    font-size: 1.25vmax;
+    font-family:'Franklin Gothic Medium';
+    letter-spacing: 1px;
+    padding: 1.5%;
+
+    border: 2px;
+    border-right: 10px;
+    border-left: 10px;
+    border-top: 5px;
+    border-color: rgb(43, 65, 78);
+    border-style: solid;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+.PartLabel{
+  width:20%;
+  align-self: center;
+}

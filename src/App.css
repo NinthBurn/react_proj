@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+
+  min-width: 960px;
+}
+
+.PanelTitle{
+  font-size:30px;
+  color: aliceblue;
+  row-gap: 25px;
+}
+
+.PagePanel{
+  border-color: rgb(32, 35, 39);
+  border-style: solid;
+  text-align: center;
+  display: flex;
+  justify-self: start;
+  flex-direction: row;
+}
+
+body{
+  background-color: rgb(54, 67, 80);
+}
