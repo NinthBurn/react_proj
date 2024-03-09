@@ -1,5 +1,6 @@
 import './table_styles.css';
 import './table_button_styles.css';
+import { DeleteButton, EditButton } from './InputPanel';
 import ComputerComponentElement, {ComputerComponent} from './ComputerComponent';
 import {useState} from 'react';
 import React from 'react';
@@ -10,21 +11,8 @@ interface TableProps{
 }
 
 function Table(props: TableProps) {   
-    const onDataChange = props.AppData[1];
     const data_rows = props.AppData[0];
     
-    const deleteClicked = (data: ComputerComponent[], identifier: number) => {
-        console.log("delete clicked " + identifier);
-        let x = data.filter((part) => {
-            return part.id === identifier ? false : true;
-        });
-        onDataChange(x);
-    }
-
-    const editClicked = (data: ComputerComponent[], identifier: number) => {
-        console.log("edit clicked " + identifier);
-    }
-
     return (
         <div className="TablePanel">
           <table className="PartTable">
@@ -34,10 +22,10 @@ function Table(props: TableProps) {
             <tbody>
               {data_rows.map((pc_part, key) => {
                   return (
-                    <tr key={pc_part.id}>
+                    <tr className="TableRow" onClick={() => console.log(pc_part.id)} key={pc_part.id}>
                         <ComputerComponentElement pc_part={pc_part}/>
-                        <td className="ComputerPart"><button onClick={() => editClicked(data_rows, pc_part.id)} className="EditButton">EDIT</button></td>
-                        <td className="ComputerPart"><button onClick={() => deleteClicked(data_rows, pc_part.id)} className="DeleteButton">DELETE</button></td>
+                        <td className="ComputerPart"><EditButton AppData={props.AppData} element_id={pc_part.id}></EditButton></td>
+                        <td className="ComputerPart"><DeleteButton AppData={props.AppData} element_id={pc_part.id}></DeleteButton></td>
                     </tr>
                     );})}
             </tbody>

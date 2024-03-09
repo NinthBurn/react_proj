@@ -1,14 +1,17 @@
 .PartTable{
-    table-layout: fixed;
+    min-height: fit-content;
+    table-layout:auto;
+    text-wrap:wrap;
     width: 100%;
+    overflow-wrap: break-word;
     word-wrap: break-word;
     border: 2px solid rgb(43, 65, 78);;
     border-collapse: collapse;
   }
-  
+
   .TablePanel{
-    max-height: 500px;
-    width: 75%;
+    max-height: 600px;
+    width: 80%;
     overflow-y: auto;
     background-color: rgb(74, 99, 116);
     word-wrap: break-word;
@@ -35,6 +38,14 @@
     font-family:'Franklin Gothic Medium';
     letter-spacing: 1px;
     word-wrap: break-word;
+    white-space: wrap;
+    overflow-wrap: break-word;
+    width:min-content+100px;
+    max-width: 300px;
     border: 3px solid rgb(43, 65, 78);;
     border-collapse: collapse;
   }
+
+.TableRow:hover{
+    background-color: rgb(78, 140, 182);
+}
