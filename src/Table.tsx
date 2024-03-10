@@ -1,8 +1,6 @@
-import './table_styles.css';
-import './table_button_styles.css';
-import { DeleteButton, EditButton } from './InputPanel';
-import ComputerComponentElement, {ComputerComponent} from './ComputerComponent';
-import {useState} from 'react';
+import './styles/table_styles.css';
+import { DeleteButton, EditButton } from './my_comps/Buttons';
+import ComputerComponentElement, {ComputerComponent} from './my_comps/ComputerComponent';
 import React from 'react';
 
 interface TableProps{
