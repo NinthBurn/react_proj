@@ -39,7 +39,7 @@ export function ComputerComponentElement(props: Props) {
             }
 
             else if(column_data[0] === "id"){
-                return <></>;
+                return;
             }
 
             else return (

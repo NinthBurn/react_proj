@@ -1,5 +1,4 @@
 import '.././styles/input_panel_styles.css';
-import { ComputerComponent } from './ComputerComponent';
 import React, {useState} from 'react';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import { TextFieldTheme } from '../styles/InputElementsThemes';
@@ -9,20 +8,21 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { styled} from '@mui/material/styles';
 import { SaveButton } from './Buttons';
-
+import { DataContext, AlertBoxContext } from '../App';
 interface InputPanelProps{
-  AppData: [ComputerComponent[], any, any];
   labels: string[];
 }
 
 function InputPanel(props: InputPanelProps) {
-    const [text, textChange] = useState(["", "", "", "", "", "", ""]);
+  const [text, textChange] = useState(["", "", "", "", "", "", ""]);
+  const {ComputerComponents, changeData} = React.useContext(DataContext);
+  const {AlertBox, changeAlert} = React.useContext(AlertBoxContext);
     textChanged = (oldText: string[], newText: string, index: number) => {
       //console.log(newText);
       //console.log(index);
-
       const t = oldText.map((x) => x);
       t[index] = newText;
+      console.log(t)
       textChange(t);
     }
 
@@ -33,7 +33,7 @@ function InputPanel(props: InputPanelProps) {
           {props.labels.map((value, key) => {
             const index = key;
             return (
-              <StackItem >
+              <StackItem key={key}>
                   <ThemeProvider theme={TextFieldTheme}><TextField className="InputEntryBox" color="textFieldWhite"
                   sx={{
                   input: { fontSize: "1vmax", fontFamily:'Franklin Gothic Medium', color: 'white' }}} size="small" label={value} 
@@ -43,7 +43,10 @@ function InputPanel(props: InputPanelProps) {
           )})}
 
           <br/>
-          <SaveButton AppData={props.AppData} InputData={text}/>
+          <StackItem >
+          <SaveButton InputData={text}/>
+          </StackItem>
+          
           </Stack>
         </Box></Box>
     );

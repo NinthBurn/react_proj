@@ -7,7 +7,9 @@
     word-wrap: break-word;
     border: 2px solid rgb(43, 65, 78);;
     border-collapse: collapse;
-  }
+    cursor: default;
+    user-select: none;
+}
 
   .TablePanel{
     max-height: 600px;
@@ -26,12 +28,20 @@
     border-style: solid;
     border-bottom: 5px;
     word-wrap: break-word;
-
+    z-index:1;
     position: sticky;
     top: 0;
   }
 
-  .ComputerPart{
+.TableHeaderColumn:hover{
+  background-color: rgb(103, 144, 170);
+}
+
+.TableHeaderColumn:active{
+  background-color: rgb(126, 179, 212);
+}
+
+.ComputerPart{
     color:aliceblue;
     font-size: 24px;
     font-size: 1.05vmax;
