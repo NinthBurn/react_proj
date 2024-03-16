@@ -1,32 +1,41 @@
 import './styles/App.css';
-import InputPanel from "./my_comps/InputPanel";
-import Table from "./my_comps/Table";
-import InsertData, {InputLabels, ColumnHeaders} from "./AppData";
-import React, { ReactElement } from 'react';
+import InsertData from "./AppData.tsx";
+import React from 'react';
 import {useState, createContext, Context} from 'react';
-import { ComputerComponent } from '../old/ComputerComponent';
-
-export let DataContext: Context<{ComputerComponents: ComputerComponent[]; changeData: React.Dispatch<React.SetStateAction<ComputerComponent[]>>}>;
-// export let DataContext: Context<{ComputerComponents: any; changeData: any}>;
-export let AlertBoxContext: Context<{AlertBox: ReactElement, changeAlert: React.Dispatch<React.SetStateAction<ReactElement>>}>;
+import { ComputerComponent } from './components/ComputerComponent.tsx';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './pages/Home.tsx';
+import AdminPanel from './pages/AdminPage.tsx';
+import ProductPage from './pages/ProductPage.tsx';
+export let DataContext: Context<{DataList: ComputerComponent[]; changeData: React.Dispatch<React.SetStateAction<ComputerComponent[]>>}>;
 
 function App() {
-  const [ComputerComponents, changeData] = useState(InsertData());
-  const [AlertBox, changeAlert] = useState(<></>);
-
-  // DataContext = createContext<{ComputerComponents: ComputerComponent[], changeData: React.Dispatch<React.SetStateAction<ComputerComponent[]>>} | undefined>(undefined);
-  DataContext = createContext<{ComputerComponents: ComputerComponent[]; changeData: React.Dispatch<React.SetStateAction<ComputerComponent[]>>}>({ComputerComponents, changeData});
-  AlertBoxContext = createContext<{AlertBox: ReactElement, changeAlert: React.Dispatch<React.SetStateAction<ReactElement>>}>({AlertBox, changeAlert});
-
+  const [DataList, changeData] = useState(InsertData());
+  DataContext = createContext<{DataList: ComputerComponent[]; changeData: React.Dispatch<React.SetStateAction<ComputerComponent[]>>}>({DataList: DataList, changeData});
+  
   return (
-    <div className="App">
-      <div className="PanelTitle">Computer Store Administrator Panel</div>
-      <div className="PagePanel">
-        <Table headers={ColumnHeaders}/>
-        <InputPanel labels={InputLabels}/>
-      </div>
-      {AlertBox}
-    </div>
+  <Router>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/admin" element={
+          <AdminPanel/>
+        }/>
+        <Route path="/about" element={
+          <h1>some text</h1>
+        }/>
+         {DataList.map((part) => {
+          return <Route 
+          path={"/product-" + part.id}
+          element={
+            <ProductPage product={part}/>
+          }/>
+        })}
+      </Routes>
+  </Router>
   );
 }
 

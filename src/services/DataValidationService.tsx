@@ -1,5 +1,4 @@
-import React from 'react';
-import { ComputerComponent } from './ComputerComponent';
+import { ComputerComponent } from '../components/ComputerComponent';
 
 function ValidateData(entry: ComputerComponent){
     let result = "";
@@ -15,20 +14,6 @@ function ValidateData(entry: ComputerComponent){
     if(isNaN(entry.price) || entry.price <= 0)
       result += "Price must be a positive number. ";
     return result;
-}
-
-export function stringToDate(_date: string, _format:string ,_delimiter: string)
-{
-  var formatLowerCase=_format.toLowerCase();
-  var formatItems=formatLowerCase.split(_delimiter);
-  var dateItems=_date.split(_delimiter);
-  var monthIndex=formatItems.indexOf("mm");
-  var dayIndex=formatItems.indexOf("dd");
-  var yearIndex=formatItems.indexOf("yyyy");
-  var month=parseInt(dateItems[monthIndex]);
-  month-=1;
-  var formatedDate = new Date(parseInt(dateItems[yearIndex]),month,parseInt(dateItems[dayIndex]));
-  return formatedDate;
 }
 
 export default ValidateData;

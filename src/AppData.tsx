@@ -1,7 +1,7 @@
-import { ComputerComponent } from "./my_comps/ComputerComponent";
+import { ComputerComponent } from "./components/ComputerComponent";
 
 export const InputLabels = ["ID", "Manufacturer", "Name", "Category", "Price", "Release Date", "Quantity"];
-export const ColumnHeaders = ["Manufacturer", "Product Name", "Category", "Price", "Release Date", "Quantity", "", ""];
+export const ColumnHeaders = ["Manufacturer", "Product Name", "Category", "Price", "Release Date", "Quantity", "Actions"];
 
 function InsertData() {
   const data: ComputerComponent[] = [
